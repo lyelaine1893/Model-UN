@@ -1,95 +1,107 @@
-<!DOCTYPE HTML>
 <head>
-<meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
 </head>
-<body bgcolor="#17202a">
 
-<link rel="stylesheet" type="text/css" href="./Model UN.css">
+<body bgcolor="#1e2222">
+
+  <link rel="stylesheet" type="text/css" href="./Modelcss.css">
+
+  <div class="callout">
+    <div class="callout-header">
+      <h3> Welcome to UMUNC! </h3>
+    </div>
+    <span class="closebtn" onclick="this.parentElement.style.display='none';">x</span>
+    <div class="callout-container">
+      <p>(Our very first Conference!)</p>
+    </div>
+  </div>
+
+<br>
 
   <div class="row">
     <div class="column">
-      <h1> Uniondale High School Model United Nations</h1>
-
-      <div class="callout">
-        <div class="callout-header">
-          <h3> Welcome to UMUNC! </h3>
-        </div>
-        <span class="closebtn" onclick="this.parentElement.style.display='none';">x</span>
-        <div class="callout-container">
-          <p>(Our very first Conference!)</p>
-        </div>
-      </div>
-
-      <div id="mySpeakersListModal" class="modal">
-        <div class="modal-dialog">
-          <div class="modal-content">
-            <div class="modal-header">
-              <button class="close" type="button" data-dismiss="modal">x</button>
-              <h2 class="modal-title"><i>Speaker's List</i></h2>
-            </div>
-            <div class="modal-body">
-              <input type="text" id="myInput" placeholder="Delegate...">
-              <span onclick="newElement()" class="addBtn">Add</span>
-              <ul id="myUL">
-              </ul>
-            </div>
-          </div>
-        </div>
-      </div>
-      <a href="#" data-toggle="modal" data-target="mySpeakersListModal">
-        <h2>Speaker's List</h2>
-      </a>
+      <h1 style="padding-bottom:50px">Uniondale High School Model United Nations</h1>
+      <button id="textBoxBtn" class="button">Text Box</button>
+     <div id="boxModal" class="modal">
+       <div class="modal-dialog">
+         <div class="modal-content">
+             <button type="button" class="close">&times;</button>
+             </div>
+             <div class="modal-body">
+               <textarea placeholder="Motions, Crisis Notes, etc..."></textarea>
+             </div>
+           </div>
+         </div>
 
       <hr>
 
-      <button id="myModeratedBtn"> Moderated Caucus</button>
+<button id="speakersListBtn">Speaker's List</button>
+<div id="speakersListModal" class="modal">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <span class="close">&times;</span>
+        <h2 class="modal-title">Speaker's List</h2>
+      </div>
+      <div class="modal-body">
+        <input type="text" id="myInput" placeholder="Title...">
+          <span onclick="newElement()" class="addBtn">Add</span>
+        <ul id="myUL">
+        </ul>
+       </div>
+      </div>
+    </div>
+  </div>
+
+      <!--<a href="#" data-toggle="modal" data-target="mySpeakersListModal">
+        <h2>Speaker's List</h2>
+      </a>-->
+
+      <hr>
+
+      <button id="myModeratedBtn" class="button">Moderated Caucus</button>
       <div id="myModeratedModal" class="modal">
         <div class="modal-content">
           <div class="modal-header">
             <span class="close">&times;</span>
             <p>Timer</p>
             <div class="modal-body">
-              <button onclick="myFunction()">Go</button>
+              <button onclick="myGoFunction()">Go</button>
               <button onclick="myStopFunction()">Stop</button>
             </div>
           </div>
         </div>
-
-        <hr>
-
-        <button id="myUnModeratedListBtn"> Unmoderated Caucus</button>
-        <div id="myUnModeratedModal" class="modal">
-          <div class="modal-content">
-            <div class="modal-header">
-              <span class="close">&times;</span>
-              <h2><i>Unmoderated Caucus</i></h2>
-            </div>
-            <div class="modal-body">
-              <button onclick="myFunction()">Go</button>
-              <button onclick="myStopFunction()">Stop</button>
-            </div>
-          </div>
-          <!--Add button to set time-->
-
-          <hr>
-
-          <footer>
-            <p> Time:</p>
-            <p id="time" ;style=""></p>
-          </footer>
-
-        </div>
-
-        <div class="column" style="background-color: #000000; padding-top: 120px; vertical-align: middle;">
-          <img src="./images/umunc_logo.PNG" style="width:600px;height:550px;" alt="UMUNC Photo">
-        </div>
-
       </div>
 
-    </div>
+      <hr>
+
+      <button id="myUnModeratedBtn" class="button"> Unmoderated Caucus</button>
+      <div id="myUnModeratedModal" class="modal">
+        <div class="modal-content">
+          <div class="modal-header">
+            <span class="close">&times;</span>
+            <h2><i>Unmoderated Caucus</i></h2>
+          </div>
+          <div class="modal-body">
+            <button onclick="otherGoFunction()">Go</button>
+            <button onclick="otherStopFunction()">Stop</button>
+          </div>
+        </div>
+      </div>
+      <!--Add button to set time-->
+
+      <hr>
+
+      <p style="padding-top:72px"><i>Created by Elaine Ly, unfortunately.</i></p>
 
   </div>
 
-<script src="./Model UN.js"></script>
+    <div class="column" style="background-color: #000000; padding-top: 120px; vertical-align: middle;">
+      <img src="../images/umunc_logo.PNG" style="width:600px;height:550px;" alt="UMUNC Photo">
+    </div>
+  </div>
+
+  <script src="Modeljs.js"></script>
 
 </body>
+

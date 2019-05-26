@@ -1,3 +1,49 @@
+/*
+.split {
+  height: 100%;
+  width: 50%;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+}
+
+.left {
+  left: 0;
+  padding: 12px 8px;
+  background-color: #1e2222;
+}
+
+.right {
+  right: 0;
+  background-color: #1e2222;
+}
+
+.centered {
+  position: absolute;
+  text-align: center;
+}
+*/
+
+* {
+  box-sizing: border-box;
+}
+
+.row {
+  display: flex;
+}
+
+.column {
+  flex: 50%;
+  padding: 12px;
+}
+
+/*div{
+  margin: auto;
+  margin-top: 60%;
+  margin-bottom: 40%;
+}
+*/
+
 body {
   color: #FEFEFE;
   font-family: 'Muli', sans-serif;
@@ -8,6 +54,9 @@ body {
 
 hr {
   background-color: #f4d03f;
+  color: #FFD700;
+  align-items: center;
+  width: 60%;
 }
 
 h1 {
@@ -44,12 +93,35 @@ h3 {
 }
 */
 
-.row {
-  display: flex;
+/* .column {
+  float: left;
+  width: 50%;
 }
 
-.column {
-  flex: 50%;
+.row:after {
+  content:"";
+  display: flex;
+  clear: both;
+}
+*/
+
+.button {
+  background-color: #1e2222;
+  font-size: 20px;
+  padding-top: 12px;
+  padding-bottom: 12px;
+  border: none;
+  color: #FFD700;
+  cursor: pointer;
+  text-align: center;
+  display: inline-block;
+  width:100%;
+}
+
+.button:hover {
+  background-color: #FFD700;
+  color: #1e2222;
+  text-decoration: underline;
 }
 
 .callout {
@@ -73,6 +145,16 @@ h3 {
   color: #FFFFFF;
 }
 
+.span{
+  position: absolute;
+  top: 5px;
+  right: 15px;
+  color: #F7DC6F;
+  font-size: 30px;
+  cursor: pointer;
+  border: none;
+}
+
 .closebtn {
   position: absolute;
   top: 5px;
@@ -86,6 +168,13 @@ h3 {
   color: #FDFEFE;
 }
 
+textarea{
+  min-height: 5px;
+  max-height: 35vh;
+  width: 100%;
+}
+
+/*
 .addBtn {
   border-radius: 30px;
   background: #000080;
@@ -96,20 +185,23 @@ h3 {
   background: #000000;
   color: #FFD700;
 }
+*/
 
 .modal {
   display: none;
   position: fixed;
+  left: 0;
+  top: 0;
   z-index: 1;
   width: 100%;
   height: 100%;
   overflow: auto;
   background-color: rgb(0, 0, 0);
-  background-color: rgba(0, 0, 0, 0.4);
+  background-color: rgba(0, 0, 0, 0.6);
 }
 
 .modal-header {
-  padding: 10px 25 px;
+  padding: 10px 25px;
   background-color: #FEFEFE;
   color: #F7DC6F;
 }
@@ -118,16 +210,13 @@ h3 {
   background-color: #D6EAF8;
   margin: auto;
   padding: 10px;
-  border: 3 px;
-  height: 75%;
+  border: 3px;
+  height: 100%;
   width: 60%;
-  box-shadow: 0px 3px 9px 0px;
   color: #FDFEFE;
+  animation-name:modalopen;
+  animation-duration:0.5s;
 }
-
-/* can add this later: animation-name: animatetop;
-animation-duration:0.3s
-@keyframes animatetop */
 
 .close {
   color: white;
@@ -143,11 +232,12 @@ animation-duration:0.3s
 }
 
 .modal-body {
-  padding: 2px 16px;
+  padding: 2px;
 }
 
-* {
-  box-sizing: border-box;
+@keyframes modalOpen{
+  from{opacity: 0}
+  to{opacity: 0.5}
 }
 
 ul {
@@ -184,7 +274,68 @@ input {
   margin: auto;
 }
 
--webkit-user-select: none;
--moz-user-select: none;
--ms-user-select: none;
-user-select: none;
+ul li:hover {
+  background: #85CLE9;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  max-height: 70%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+.close: {
+  background-color: #F7DC6F;
+  color: #E5E7E9;
+}
+
+.header::after {
+  display: table;
+  clear: both;
+}
+
+/* padding: 3px; maybe */
+
+.addbtn {
+  width: 30%;
+  float: left;
+  text-align: center;
+  cursor: pointer;
+  font-size: 20px;
+  border-radius: 30px;
+  background: #AEB6BF;
+}
+
+.addBtn:hover {
+  background-color: #F7DC6F;
+}
+
+.content: {
+  overflow: hidden;
+  background-color: #eaf2f8;
+}
+
+textarea {
+  width: 100%;
+  height: 100%;
+  padding: 13px 6px;
+  box-sizing: border-box;
+  border: 2px gray;
+}
+
+.input {
+  width: 60%;
+  height: 80%;
+}
+
+/* input[type=text]{
+
+} */
+
+.input[type=text]:focus {
+  border: 3px solid #D3D3D3;
+}

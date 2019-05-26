@@ -1,4 +1,4 @@
-/*
+/* Alternative?
 .split {
   height: 100%;
   width: 50%;
@@ -37,7 +37,8 @@
   padding: 12px;
 }
 
-/*div{
+/* Possibly do
+div{
   margin: auto;
   margin-top: 60%;
   margin-bottom: 40%;
@@ -174,18 +175,16 @@ textarea{
   width: 100%;
 }
 
-/*
 .addBtn {
   border-radius: 30px;
-  background: #000080;
-  color: #FFFFFF;
+  background: ##AED6F1;
+  color: #FDFEFE;
 }
 
 .addBtn:hover {
-  background: #000000;
-  color: #FFD700;
+  background: #FDFEFE;
+  color: #AED6F1;
 }
-*/
 
 .modal {
   display: none;
@@ -332,7 +331,8 @@ textarea {
   height: 80%;
 }
 
-/* input[type=text]{
+/* Possibly add 
+input[type=text]{
 
 } */
 

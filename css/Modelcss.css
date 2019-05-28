@@ -1,4 +1,4 @@
-/* Alternative way?
+/*
 .split {
   height: 100%;
   width: 50%;
@@ -37,8 +37,7 @@
   padding: 12px;
 }
 
-/* Possibly do
-div{
+/*div{
   margin: auto;
   margin-top: 60%;
   margin-bottom: 40%;
@@ -146,7 +145,7 @@ h3 {
   color: #FFFFFF;
 }
 
-.span{
+.span {
   position: absolute;
   top: 5px;
   right: 15px;
@@ -169,7 +168,7 @@ h3 {
   color: #FDFEFE;
 }
 
-textarea{
+textarea {
   min-height: 5px;
   max-height: 35vh;
   width: 100%;
@@ -177,7 +176,7 @@ textarea{
 
 .addBtn {
   border-radius: 30px;
-  background: ##AED6F1;
+  background: #AED6F1;
   color: #FDFEFE;
 }
 
@@ -213,8 +212,8 @@ textarea{
   height: 100%;
   width: 60%;
   color: #FDFEFE;
-  animation-name:modalopen;
-  animation-duration:0.5s;
+  animation-name: modalopen;
+  animation-duration: 0.5s;
 }
 
 .close {
@@ -234,10 +233,13 @@ textarea{
   padding: 2px;
 }
 
-@keyframes modalOpen{
-  from{opacity: 0}
-  to{opacity: 0.5}
+
+
+@keyframes modalOpen {
+  from { opacity: 0; }
+  to { opacity: 0.5; }
 }
+
 
 ul {
   margin: 2px;
@@ -331,11 +333,11 @@ textarea {
   height: 80%;
 }
 
-/* Possibly add 
-input[type=text]{
+/* input[type=text]{
 
 } */
 
 .input[type=text]:focus {
   border: 3px solid #D3D3D3;
 }
+

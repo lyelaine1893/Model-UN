@@ -1,7 +1,6 @@
 //TextArea
 var modal = document.getElementById("boxModal");
 var btn = document.getElementById("textBoxBtn");
-var span = document.getElementsByClassName("close")[0];
 btn.onclick = function() {
   modal.style.display = "block";
 };

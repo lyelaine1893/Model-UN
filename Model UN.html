@@ -83,8 +83,13 @@
             <h2><i>Unmoderated Caucus</i></h2>
           </div>
           <div class="modal-body">
-            <button onclick="otherGoFunction()">Go</button>
-            <button onclick="otherStopFunction()">Stop</button>
+            <form id="form"> Seconds
+          <input type="text" id="minutes" name="minutes" value="0" maxlength="2"/>
+          <input type="button" id="btncountdown" value="Input"/>
+          <span id="timespan"></span>
+          <input type="button" value="Go" onclick="countdown3()">
+          <input type="button" value="Reset" onclick="creset3()">
+          <input type="button" value="Stop" onclick="cstop3()">
           </div>
         </div>
       </div>

@@ -1,7 +1,31 @@
+//TextArea
+var modal = document.getElementById("boxModal");
+var btn = document.getElementById("textBoxBtn");
+var span = document.getElementsByClassName("close")[0];
+btn.onclick = function() {
+  modal.style.display = "block";
+};
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+};
+$(document).ready(function() {
+  $(".toggle-modal").click(function() {
+    $("#boxModal").modal('toggle');
+  });
+});
+$(document).ready(function() {
+  $(".show-text").click(function() {
+    $('#boxModal').find(".lots-of-text").toggle();
+    $('#boxModal').modal('handleUpdate');
+  });
+});
+
 //Speakers List
 var modal = document.getElementById("speakersListModal");
 var btn = document.getElementById("speakersListBtn");
-var span = document.getElementsByClassName("close")[0];
+var span = document.getElementsById("close2")[0];
 btn.onclick = function() {
   modal.style.display = "block";
 };
@@ -24,38 +48,13 @@ for (i = 0; i < myNodelist.length; i++) {
   span.appendChild(txt);
   myNodelist[i].appendChild(span);
 }
-var close = document.getElementsByClassName("close");
+var close = document.getElementsById("close2");
 var i;
 for (i = 0; i < close.length; i++) {
   close[i].onclick = function() {
     var div = this.parentElement;
     div.style.display = "none";
   };
-}
-function newElement() {
-  var li = document.createElement("li");
-  var inputValue = document.getElementById("myInput").value;
-  var t = document.createTextNode(inputValue);
-  li.appendChild(t);
-  if (inputValue === '') {
-    alert("You must write something!");
-  } else {
-    document.getElementById("myUL").appendChild(li);
-  }
-  document.getElementById("myInput").value = "";
-
-  var span = document.createElement("SPAN");
-  var txt = document.createTextNode("\u00D7");
-  span.className = "close";
-  span.appendChild(txt);
-  li.appendChild(span);
-
-  for (i = 0; i < close.length; i++) {
-    close[i].onclick = function() {
-      var div = this.parentElement;
-      div.style.display = "none";
-    };
-  }
 }
 
 /*Modal Button alternative:
@@ -78,25 +77,6 @@ function outsideClick(e) {
 }
 }
 */
-
-var myNodelist = document.getElementsByTagName("LI");
-var i;
-for (i = 0; i < myNodelist.length; i++) {
-  var span = document.createElement("SPAN");
-  var txt = document.createTextNode("\u00D7");
-  span.className = "close";
-  span.appendChild(txt);
-  myNodelist[i].appendChild(span);
-}
-
-var close = document.getElementsByClassName("close");
-var i;
-for (i = 0; i < close.length; i++) {
-  close[i].onclick = function() {
-    var div = this.parentElement;
-    div.style.display = "none";
-  };
-}
 
 var list = document.querySelector('ul');
 list.addEventListener('click', function(ev) {
@@ -149,24 +129,17 @@ window.onclick = function(event) {
   }
 };
 
-var x=60
+var myVar;
 
-var t 
-
-function stopCount()
-{
-  clearTimerout(t)
+function myGoFunction() {
+  setTimeout(function() {
+      alert("Time's Up");
+    },
+    600000);
 }
-function timedCount()
-{
-  document.getElementById('modTimer').value=x
-  x=x-1
-  if(x==-1)
-  {
-    alert("time's up")
-    stopcount()
-  }
-  x=setTimeout("timedCount()",1000)
+
+function myStopFunction() {
+  clearTimeout(myVar);
 }
 
 //Unmoderated Caucus
@@ -187,22 +160,41 @@ window.onclick = function(event) {
   }
 };
 
-var myVar;
+var COUNT3;
+$(document).ready(function() {
+  $('#btncountdown').click(function(){
+    COUNT = $('seconds').val();
+    cdreset3();
+  });
+});
 
-function otherGoFunction() {
-  setTimeout(function() {
-      alert("Time's Up");
-    },
-    600000);
+var t, count;
+
+function cdisplay3() {
+  document.getElementById('timespan').innerHTML = count;
 }
 
-function otherStopFunction() {
-  clearTimeout(myVar);
+function countdown3() {
+  cdisplay3();
+  if ( count === 0){
+  } else {
+    count --;
+    t = setTimeout(countdown, 10000);
+  }
 }
 
-/*
-Date:
+function cpause3() {
+  clearTimeout(t);
+}
 
+function creset3(){
+  cpause();
+  count = COUNT3;
+  cdisplay3();
+}
+
+
+/* Maybe add
 //Date
 var d = new Date();
 document.getElementById("time").innerHTML = d;

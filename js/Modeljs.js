@@ -149,17 +149,24 @@ window.onclick = function(event) {
   }
 };
 
-var myVar;
+var x=60
 
-function myGoFunction() {
-  setTimeout(function() {
-      alert("Time's Up");
-    },
-    600000);
+var t 
+
+function stopCount()
+{
+  clearTimerout(t)
 }
-
-function myStopFunction() {
-  clearTimeout(myVar);
+function timedCount()
+{
+  document.getElementById('modTimer').value=x
+  x=x-1
+  if(x==-1)
+  {
+    alert("time's up")
+    stopcount()
+  }
+  x=setTimeout("timedCount()",1000)
 }
 
 //Unmoderated Caucus

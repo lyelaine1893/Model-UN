@@ -146,7 +146,7 @@ h3 {
   color: #FFFFFF;
 }
 
-.span{
+.span {
   position: absolute;
   top: 5px;
   right: 15px;
@@ -169,7 +169,11 @@ h3 {
   color: #FDFEFE;
 }
 
-textarea{
+textarea {
+  padding-top: 50px;
+  padding-bottom: 50px;
+  min-height: 5px;
+  max-height: 50vh;
   min-height: 5px;
   max-height: 35vh;
   width: 100%;

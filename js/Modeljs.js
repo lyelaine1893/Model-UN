@@ -1,3 +1,10 @@
+//Text Box?
+$(document).ready(function(){
+$("#textBtn").click(function(){
+$("textBoxModal").modal({backdrop:true});
+});
+});
+
 //Speakers List
 var modal = document.getElementById("speakersListModal");
 var btn = document.getElementById("speakersListBtn");

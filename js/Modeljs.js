@@ -24,7 +24,7 @@ $(document).ready(function() {
 //Speakers List
 var modal = document.getElementById("speakersListModal");
 var btn = document.getElementById("speakersListBtn");
-var span = document.getElementsById("close2")[0];
+var span = document.getElementById("close2")[0];
 btn.onclick = function() {
   modal.style.display = "block";
 };

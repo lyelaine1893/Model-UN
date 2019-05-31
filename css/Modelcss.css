@@ -37,7 +37,7 @@
   padding: 12px;
 }
 
-/*div{
+/* div{
   margin: auto;
   margin-top: 60%;
   margin-bottom: 40%;
@@ -87,7 +87,6 @@ h3 {
   overflow-x: hidden;
   padding-top: 20px;
 }
-
 .right{
   background-color: #FDFEFE;
 }
@@ -97,7 +96,6 @@ h3 {
   float: left;
   width: 50%;
 }
-
 .row:after {
   content:"";
   display: flex;
@@ -115,7 +113,7 @@ h3 {
   cursor: pointer;
   text-align: center;
   display: inline-block;
-  width:100%;
+  width: 100%;
 }
 
 .button:hover {
@@ -178,7 +176,7 @@ textarea {
 }
 
 .addBtn {
-  border-radius: 30px;
+  border-radius: 12px;
   background: #AED6F1;
   color: #FDFEFE;
 }
@@ -311,10 +309,6 @@ img {
   background: #AEB6BF;
 }
 
-.addBtn:hover {
-  background-color: #F7DC6F;
-}
-
 .content: {
   overflow: hidden;
   background-color: #eaf2f8;
@@ -326,10 +320,8 @@ img {
 }
 
 /* input[type=text]{
-
 } */
 
 .input[type=text]:focus {
   border: 3px solid #D3D3D3;
 }
-

@@ -47,7 +47,7 @@ for (i = 0; i < myNodelist.length; i++) {
   span.appendChild(txt);
   myNodelist[i].appendChild(span);
 }
-var close = document.getElementsById("close2");
+var close = document.getElementsById("close");
 var i;
 for (i = 0; i < close.length; i++) {
   close[i].onclick = function() {

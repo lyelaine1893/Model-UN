@@ -159,6 +159,8 @@ window.onclick = function(event) {
   }
 };
 
+//unsure about the stopwatches
+
 var COUNT3;
 $(document).ready(function() {
   $('#btncountdown').click(function(){

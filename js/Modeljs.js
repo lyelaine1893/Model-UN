@@ -21,23 +21,29 @@ $(document).ready(function() {
   });
 });
 
+//All but the Text area
+var btn = document.querySelectorAll("button.modal-button");
+var modals = document.querySelectorAll('.modal');
+var spans = documents.getElementsByClassName("close");
+
+for (var v = 0; v < btn.length; v++){
+btn[v].onclick = function(e) {
+e.preventDefault();
+modal = document.querySelector(e.target.getAttribute("href"));
+modal.style.display = "block";
+}
+}
+
+for (var v = 0; v < spans.length; v++) {
+spans[v].onclick = function(){
+for (var index in modals){
+if (typeof modals[index].style != 
+'undefined')modals[index]
+}
+}
+}
+
 //Speakers List
-var modal = document.getElementById("speakersListModal");
-var btn = document.getElementById("speakersListBtn");
-var span = document.getElementById("close2")[0];
-btn.onclick = function() {
-  modal.style.display = "block";
-};
-span.onclick = function() {
-  modal.style.display = "none";
-};
-
-window.onclick = function(event) {
-  if (event.target == modal) {
-    modal.style.display = "none";
-  }
-};
-
 var myNodelist = document.getElementsByTagName("LI");
 var i;
 for (i = 0; i < myNodelist.length; i++) {
@@ -111,23 +117,6 @@ function newElement() {
 }
 
 //Moderated Caucus
-var modal = document.getElementById("myModeratedModal");
-var btn = document.getElementById("myModeratedBtn");
-var span = document.getElementsByClassName("close")[0];
-btn.onclick = function() {
-  modal.style.display = "block";
-};
-
-span.onclick = function() {
-  modal.style.display = "none";
-};
-
-window.onclick = function(event) {
-  if (event.target == modal) {
-    modal.style.display = "none";
-  }
-};
-
 var myVar;
 
 function myGoFunction() {
@@ -142,23 +131,6 @@ function myStopFunction() {
 }
 
 //Unmoderated Caucus
-var modal = document.getElementById("myUnModeratedModal");
-var btn = document.getElementById("myUnModeratedBtn");
-var span = document.getElementsByClassName("close")[0];
-btn.onclick = function() {
-  modal.style.display = "block";
-};
-
-span.onclick = function() {
-  modal.style.display = "none";
-};
-
-window.onclick = function(event) {
-  if (event.target == modal) {
-    modal.style.display = "none";
-  }
-};
-
 var COUNT3;
 $(document).ready(function() {
   $('#btncountdown').click(function(){

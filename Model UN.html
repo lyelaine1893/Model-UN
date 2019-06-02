@@ -35,12 +35,12 @@
 
       <hr>
 
-<button id="speakersListBtn" class="button">Speaker's List</button>
-<div id="speakersListModal" class="modal">
-   <span class="closebtn" onclick="this.parentElement.style.display='none';">x</span> 
+<button class="modal-button" href="#speakersListModal">Speaker's List</button>
+<div id="speakersListmodal" class="modal">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
+      <span class="close">x</span>
         <h2 class="modal-title">Speaker's List</h2>
       </div>
       <div class="modal-body">
@@ -59,8 +59,8 @@
 
       <hr>
 
-      <button id="myModeratedBtn" class="button">Moderated Caucus</button>
-      <div id="myModeratedModal" class="modal">
+      <button href="#moderatedModal" class="modal-button">Moderated Caucus</button>
+      <div id="moderatedModal" class="modal">
         <div class="modal-content">
           <div class="modal-header">
             <span class="close">&times;</span>
@@ -75,24 +75,26 @@
 
       <hr>
 
-      <button id="myUnModeratedBtn" class="button"> Unmoderated Caucus</button>
-      <div id="myUnModeratedModal" class="modal">
-        <div class="modal-content">
-          <div class="modal-header">
-            <span class="close">&times;</span>
-            <h2><i>Unmoderated Caucus</i></h2>
-          </div>
-          <div class="modal-body">
-            <form id="form"> Seconds
-          <input type="text" id="minutes" name="minutes" value="0" maxlength="2"/>
-          <input type="button" id="btncountdown" value="Input"/>
-          <span id="timespan"></span>
-          <input type="button" value="Go" onclick="countdown3()">
-          <input type="button" value="Reset" onclick="creset3()">
-          <input type="button" value="Stop" onclick="cstop3()">
-          </div>
-        </div>
-      </div>
+ <button href="#unmoderatedCaucusModal" class="modal-button"> Unmoderated Caucus</button>
+<div id="unmoderatedCaucusModal" class="modal">
+  <div class="modal-content">
+    <div class="modal-header">
+      <span class="close">x</span>
+      <h2><i>Unmoderated Caucus</i></h2>
+    </div>
+    <div class="modal-body">
+      <form id="form"> Minutes
+        <input type="text" id="minutes" name="minutes" value="0" maxlength="2" >
+        <input type="button" id="btncountdown" value="Input">
+        <span id="timespan"></span>
+        <input type="button" value="Go" onclick="countdown3()">
+        <input type="button" value="Reset" onclick="creset3()">
+        <input type="button" value="Stop" onclick="cstop3()">
+      </form>
+    </div>
+  </div>
+</div>
+
       <!--Add button to set time-->
 
       <hr>

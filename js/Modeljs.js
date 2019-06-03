@@ -1,91 +1,52 @@
-//Text Box?
-$(document).ready(function(){
-$("#textBtn").click(function(){
-$("textBoxModal").modal({backdrop:true});
-});
+{
+  "jasmine": true,
+  "mocha": true,
+  **"esversion":6,**
+  "globals": {
+    **"esversion": 6,**
+    "angular": false,
+    "browser": false,
+    "inject": false,
+    "_": false,
+    "driver": false,
+    "protractor": false,
+    "$": false,
+    "$$": false,
+    "element": false,
+    "by": false,
+    "list": false
+  }
+}
+
+//All Modals
+var modalBtns = [...document.querySelectorAll(".button")];
+modalBtns.forEach(function(btn){
+  btn.onclick = function() {
+    var modal = btn.getAttribute('data-modal');
+    document.getElementById(modal).style.display = "block";
+  }
 });
 
-//Speakers List
-var modal = document.getElementById("speakersListModal");
-var btn = document.getElementById("speakersListBtn");
-var span = document.getElementsByClassName("close")[0];
-btn.onclick = function() {
-  modal.style.display = "block";
-};
-span.onclick = function() {
-  modal.style.display = "none";
-};
-
-window.onclick = function(event) {
-  if (event.target == modal) {
+var closeBtns = [...document.querySelectorAll(".close")];
+closeBtns.forEach(function(btn){
+  btn.onclick = function() {
+    var modal = btn.closest('.modal');
     modal.style.display = "none";
   }
-};
+});
 
-var myNodelist = document.getElementsByTagName("LI");
-var i;
-for (i = 0; i < myNodelist.length; i++) {
-  var span = document.createElement("SPAN");
-  var txt = document.createTextNode("\u00D7");
-  span.className = "close";
-  span.appendChild(txt);
-  myNodelist[i].appendChild(span);
-}
-var close = document.getElementsByClassName("close");
-var i;
-for (i = 0; i < close.length; i++) {
-  close[i].onclick = function() {
-    var div = this.parentElement;
-    div.style.display = "none";
-  };
-}
-function newElement() {
-  var li = document.createElement("li");
-  var inputValue = document.getElementById("myInput").value;
-  var t = document.createTextNode(inputValue);
-  li.appendChild(t);
-  if (inputValue === '') {
-    alert("You must write something!");
-  } else {
-    document.getElementById("myUL").appendChild(li);
+window.onclick = function(event) {
+  if (event.target.className === "modal") {
+    event.target.style.display = "none";
   }
-  document.getElementById("myInput").value = "";
-
-  var span = document.createElement("SPAN");
-  var txt = document.createTextNode("\u00D7");
-  span.className = "close";
-  span.appendChild(txt);
-  li.appendChild(span);
-
-  for (i = 0; i < close.length; i++) {
-    close[i].onclick = function() {
-      var div = this.parentElement;
-      div.style.display = "none";
+}
+    window.onclick = function closeOnClick(event) {
+        if (event.target.className === "modal") {
+            event.target.style.display = "none";
+        }
     };
-  }
-}
 
-/*Modal Button alternative:
-
-modalBtn.addEventListener('click', openModal);
-
-closeBtn.addEventListener('click', closeModal);
-
-function openModal() {
-  modal.style.display ='block';
-}
-
-function closeModal() {
-  modal.style.display ='none';
-}
-
-function outsideClick(e) {
-  if(e.target == modal){
-  modal.style.display ='none';
-}
-}
-*/
-
+//Speakers List
 var myNodelist = document.getElementsByTagName("LI");
 var i;
 for (i = 0; i < myNodelist.length; i++) {
@@ -95,8 +56,7 @@ for (i = 0; i < myNodelist.length; i++) {
   span.appendChild(txt);
   myNodelist[i].appendChild(span);
 }
-
-var close = document.getElementsByClassName("close");
+var close = document.getElementById("close2");
 var i;
 for (i = 0; i < close.length; i++) {
   close[i].onclick = function() {
@@ -139,23 +99,6 @@ function newElement() {
 }
 
 //Moderated Caucus
-var modal = document.getElementById("myModeratedModal");
-var btn = document.getElementById("myModeratedBtn");
-var span = document.getElementsByClassName("close")[0];
-btn.onclick = function() {
-  modal.style.display = "block";
-};
-
-span.onclick = function() {
-  modal.style.display = "none";
-};
-
-window.onclick = function(event) {
-  if (event.target == modal) {
-    modal.style.display = "none";
-  }
-};
-
 var myVar;
 
 function myGoFunction() {
@@ -170,39 +113,41 @@ function myStopFunction() {
 }
 
 //Unmoderated Caucus
-var modal = document.getElementById("myUnModeratedModal");
-var btn = document.getElementById("myUnModeratedBtn");
-var span = document.getElementsByClassName("close")[0];
-btn.onclick = function() {
-  modal.style.display = "block";
-};
+var COUNT3;
+$(document).ready(function() {
+  $('#btncountdown').click(function(){
+    COUNT = $('seconds').val();
+    cdreset3();
+  });
+});
 
-span.onclick = function() {
-  modal.style.display = "none";
-};
+var t, count;
 
-window.onclick = function(event) {
-  if (event.target == modal) {
-    modal.style.display = "none";
+function cdisplay3() {
+  document.getElementById('timespan').innerHTML = count;
+}
+
+function countdown3() {
+  cdisplay3();
+  if ( count === 0){
+  } else {
+    count --;
+    t = setTimeout(countdown, 10000);
   }
-};
-
-var myVar;
-
-function otherGoFunction() {
-  setTimeout(function() {
-      alert("Time's Up");
-    },
-    600000);
 }
 
-function otherStopFunction() {
-  clearTimeout(myVar);
+function cpause3() {
+  clearTimeout(t);
 }
 
-/*
-Date:
+function creset3(){
+  cpause();
+  count = COUNT3;
+  cdisplay3();
+}
 
+
+/* Maybe add
 //Date
 var d = new Date();
 document.getElementById("time").innerHTML = d;

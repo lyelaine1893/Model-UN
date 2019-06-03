@@ -4,7 +4,7 @@
 
 <body bgcolor="#1e2222">
 
-  <link rel="stylesheet" type="text/css" href="../Modelcss.css">
+  <link rel="stylesheet" type="text/css" href="./Modelcss.css">
 
   <div class="callout">
     <div class="callout-header">
@@ -12,7 +12,7 @@
     </div>
     <span class="closebtn" onclick="this.parentElement.style.display='none';">x</span>
     <div class="callout-container">
-      <p>(Our very first Conference!)</p>
+      <p>(Our very first Conference)!</p>
     </div>
   </div>
 
@@ -20,16 +20,14 @@
 
   <div class="row">
     <div class="column">
-    <h1 style="padding-bottom:50px">Uniondale High School Model United Nations</h1>
- 
-      <button type="button" class="btn btn-info btn-md" data-toggle="modal" data-target="#textBoxModal" data-backdrop="true" id="txtBtn">Text Box</button>
-       <div class="modal fade" id="boxModal" role="dialog">
+      <h1 style="padding-bottom:50px">Uniondale High School Model United Nations</h1>
+      <button data-modal="boxModal" class="button">Text Box</button>
+     <div id="boxModal" class="modal">
        <div class="modal-dialog">
-       
          <div class="modal-content">
-         <div class="modal-header">
-               <button type="button" class="close" data-dismiss="modal">&times;</button>
-         </div>
+           <div class="modal-header">
+              <a class="close">&times;</a>
+              </div>
              <div class="modal-body">
                <textarea placeholder="Motions, Crisis Notes, etc..."></textarea>
              </div>
@@ -39,12 +37,12 @@
 
       <hr>
 
-<button id="speakersListBtn">Speaker's List</button>
+<button data-modal="speakersListModal" class="button">Speaker's List</button>
 <div id="speakersListModal" class="modal">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <span class="close">&times;</span>
+        <a class="close">&times;</a>
         <h2 class="modal-title">Speaker's List</h2>
       </div>
       <div class="modal-body">
@@ -58,16 +56,16 @@
   </div>
 
       <!--<a href="#" data-toggle="modal" data-target="mySpeakersListModal">
-        <h2>Speaker's List</h2>
+      <h2>Speaker's List </h2>
       </a>-->
 
       <hr>
 
-      <button id="myModeratedBtn" class="button">Moderated Caucus</button>
-      <div id="myModeratedModal" class="modal">
+      <button data-modal="moderatedModal" class="button">Moderated Caucus</button>
+      <div id="moderatedModal" class="modal">
         <div class="modal-content">
           <div class="modal-header">
-            <span class="close">&times;</span>
+            <a class="close">&times;</a>
             <p>Timer</p>
             <div class="modal-body">
               <button onclick="myGoFunction()">Go</button>
@@ -79,19 +77,25 @@
 
       <hr>
 
-      <button id="myUnModeratedBtn" class="button"> Unmoderated Caucus</button>
-      <div id="myUnModeratedModal" class="modal">
+      <button data-modal="unModeratedModal" class="button">Unmoderated Caucus</button>
+      <div id="unModeratedModal" class="modal">
         <div class="modal-content">
           <div class="modal-header">
-            <span class="close">&times;</span>
-            <h2><i>Unmoderated Caucus</i></h2>
-          </div>
-          <div class="modal-body">
-            <button onclick="otherGoFunction()">Go</button>
-            <button onclick="otherStopFunction()">Stop</button>
-          </div>
-        </div>
-      </div>
+            <a class="close">&times;</a>
+      <h2><i>Unmoderated Caucus</i></h2>
+    </div>
+    <div class="modal-body">
+      <form id="form"> Minutes
+    <input type="text" id="minutes" name="minutes" value="0" maxlength="2"/>
+    <input type="button" id="btncountdown" value="Input"/>
+    <span id="timespan"></span>
+    <input type="button" value="Go" onclick="countdown3()"/>
+    <input type="button" value="Reset" onclick="creset3()"/>
+    <input type="button" value="Stop" onclick="cstop3()"/>
+    </form>
+    </div>
+    </div>
+    </div>
       <!--Add button to set time-->
 
       <hr>
@@ -101,11 +105,12 @@
   </div>
 
     <div class="column" style="background-color: #000000; padding-top: 120px; vertical-align: middle;">
-      <img src="umunc_logo.PNG" style="width:600px;height:550px;" alt="UMUNC Photo">
+      <img src="../images/umunc_logo.PNG" style="width:600px;height:550px;" alt="UMUNC Photo">
     </div>
   </div>
 
-  <script src="../Modeljs.js"></script>
+  <script src="Modeljs.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
 
 </body>
 

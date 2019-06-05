@@ -37,57 +37,61 @@
 
       <hr>
 
-<button data-modal="speakersListModal" class="button">Speaker's List</button>
-<div id="speakersListModal" class="modal">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <a class="close">&times;</a>
-        <h2 class="modal-title"><i>Speaker's List</i></h2>
-      </div>
-      <div class="modal-body">
-        <div class="row">
-          <div class="column">
-        <input type="text" id="speakersInput" placeholder="Title...">
-          <span onclick="newElement()" class="addBtn">Add</span>
-        <ul id="speakersUL">
-        </ul>
-       </div>
-       <div class="column">
-         <div id="t" class="badge"> 00:00</div>
-         <button id=timerBtn>Start></button>
-         </div>
-      </div>
-    </div>
-  </div>
-  </div>
-  
-  <script>
-    (function($) {
-      %("#t").timer();
-    }());
-    $("#t").timer('pause');
-    $("#t").timer('resume');
-    $("t").timer({
-      format: {%m},
-    });
-</script>  
-
-      <hr>
-
-      <button data-modal="moderatedModal" class="button">Moderated Caucus</button>
-      <div id="moderatedModal" class="modal">
-        <div class="modal-content">
-          <div class="modal-header">
-            <a class="close">&times;</a>
-            <p>Timer</p>
-            <div class="modal-body">
-              <button onclick="myGoFunction()">Go</button>
-              <button onclick="myStopFunction()">Stop</button>
+<div class="container">
+  <button data-modal="speakersListModal" class="button">Speaker's List</button>
+  <div id="speakersListModal" class="modal">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <a class="close">&times;</a>
+          <h2 class="modal-title"><i>Speaker's List</i></h2>
+        </div>
+        <div class="modal-body">
+          <div class="row">
+            <div class="column">
+              <div class="container">
+                <p>
+                  <label for="new-speaker" placeholder=
+"Add Speaker..."></label><input id="new-speaker" type="text"><button style="border-color:#D3D3D3;background:#87CEEB;
+  color:#FDFEFE">Add</button>
+                </p>
+                <ul id="speakers-list">
+                  <li><input type="checkbox"><label></label><input type="text"><button class="deleteBtn">Delete</button></li>
+                </ul>
+              </div>
+              <ul id="speakersUL">
+              </ul>
+            </div>
+            <hr style="height:40vh; width:3px">
+            <div class="column">
+              <div id="t" class="badge"> 00:00 </div>
+              <button id=timerBtn1>Start</button>
             </div>
           </div>
         </div>
       </div>
+    </div>
+
+      <hr>
+
+      <button data-modal="moderatedModal" class="button">Moderated Caucus</button>
+<div id="moderatedModal" class="modal">
+  <div class="modal-content">
+    <div class="modal-header">
+      <a class="close">&times;</a>
+      <p>Timer</p>
+      <div class="modal-body">
+        <div id="t2" class="badge">00:00 </div>
+        <button id="timerBtn2">Start</button>
+        <div id="t3" class="badge"> 00:00
+          <button id="timerBtn3">
+              Start
+              </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 
       <hr>
 
@@ -99,18 +103,12 @@
       <h2><i>Unmoderated Caucus</i></h2>
     </div>
     <div class="modal-body">
-      <form id="form"> Minutes
-    <input type="text" id="minutes" name="minutes" value="0" maxlength="2"/>
-    <input type="button" id="btncountdown" value="Input"/>
-    <span id="timespan"></span>
-    <input type="button" value="Go" onclick="countdown3()"/>
-    <input type="button" value="Reset" onclick="creset3()"/>
-    <input type="button" value="Stop" onclick="cstop3()"/>
-    </form>
+     <div id="t4" class="badge"> 00:00
+          <button id="timerBtn4">Start</button>
     </div>
     </div>
     </div>
-      <!--Add button to set time-->
+    </div>
 
       <hr>
 
